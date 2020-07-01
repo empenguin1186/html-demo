@@ -1,0 +1,95 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+
+body {
+    font-family: 'Kameron', 'Noto Sans JP', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    // 上下余白を解消するプロパティ
+    vertical-align: bottom;
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+.font-md {
+    font-size: 17px;
+}
+
+.font-lr {
+    font-size: 17px;
+}
+
+.font-lg {
+    font-size: 25px;
+}
+
+.mb-sm {
+    margin-bottom: 16px !important;
+}
+
+.mb-lg {
+    margin-bottom: 80px !important;
+}
+
+.pb-sm {
+    padding-bottom: 16px !important;
+}
+
+.pb-lg {
+    padding-bottom: 80px !important;
+}
+
+.content-width {
+    width: 80%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $navHeight;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @extend .content-width;
+    }
+
+    &__nav {
+        display: none;
+    }
+
+    &__ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__li {
+        margin-left: 20px;
+
+        & > a {
+            color: $cBlack;
+            text-decoration: none !important;
+            text-transform: uppercase;
+        }
+
+        & > button {
+            text-transform: uppercase;
+        }
+    }
+}

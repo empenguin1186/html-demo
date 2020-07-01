@@ -1,0 +1,11 @@
+.header {
+    &__nav {
+        display: flex;
+    }
+}
+
+.mobile-menu {
+    &__btn {
+        display: none;
+    }
+}
