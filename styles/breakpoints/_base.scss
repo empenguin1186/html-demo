@@ -53,12 +53,20 @@ img {
     max-width: $contentMaxWidth;
 }
 
+#container {
+    position: relative;
+    z-index: 10;
+}
+
 .header {
-    position: absolute;
+    display: flex;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: $navHeight;
+    background-color: transparent;
+    align-items: center;
 
     &__inner {
         display: flex;
@@ -90,6 +98,99 @@ img {
 
         & > button {
             text-transform: uppercase;
+        }
+    }
+
+    & .logo {
+        justify-content: center;
+        font-size: 38px;
+    }
+}
+
+.logo {
+    font-size: 42px;
+    display: flex;
+
+    &__img {
+        width: 0.7em;
+    }
+
+    &__stay {
+        color: $cWineRed;
+    }
+}
+
+.main-title {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.sub-title {
+    display: block;
+}
+
+
+// ============= _mobile-menu.scss ====================
+
+.mobile-menu {
+
+    position: fixed;
+    right: 0;
+    top: 60px;
+    width: 300px;
+    
+    &__btn {
+
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        outline: none !important;
+
+        & > span {
+            background-color: $cBlack;
+            display: block;
+            width: 35px;
+            height: 2px;
+            margin-bottom: 9px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__ul {
+        list-style: none;
+    }
+
+    &__link {
+        text-decoration: none !important;
+    }
+}
+
+
+// ============= _button.scss ====================
+
+.btn {
+    position: relative;
+    display: inline-block;
+    border: 1px solid $cBlack;
+    font-weight: 600;
+    padding: 10px 40px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+
+    &.filled {
+        background-color: $cBlack;
+        color: $cWhite;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            color: $cBlack;
+            background-color: $cWhite;            
         }
     }
 }
