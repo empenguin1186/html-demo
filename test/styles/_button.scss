@@ -1,0 +1,160 @@
+.bgColorWhite {
+  background-color: $cWhite;
+  color: $cBlack;
+}
+
+.bgColorBlack {
+  background-color: $cBlack;
+  color: $cWhite;
+}
+
+.btn {
+  position: relative;
+  margin: 10px auto;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-decoration: none !important;
+  border: 1px solid black;
+  
+  &.float {
+    @extend .bgColorWhite;
+    
+    &:hover {
+      @extend .bgColorBlack;
+    }
+  }
+
+  &.filled {
+    @extend .bgColorBlack;
+    box-shadow: 5px 5px 10px 0px $cGray;
+    
+    &:hover {
+      @extend .bgColorWhite;
+      box-shadow: none;
+    }
+  }
+
+  &.letter-spacing {
+    @extend .bgColorWhite;
+
+    &:hover {
+      @extend .bgColorBlack;
+      letter-spacing: 3px;
+    }
+  }
+
+  &.shadow {
+    @extend .bgColorWhite;
+
+    &:hover {
+      transform: translate(-2.5px, -2.5px);
+      box-shadow: 5px 5px 0 0 $cBlack;
+    }
+  }
+
+  &.solid {
+    @extend .bgColorWhite;
+    box-shadow: 2px 2px 0 0 $cBlack;
+    border-radius: 7px;
+
+    &:hover {
+      box-shadow: none;
+      transform: translate(2px, 2px);
+    }
+  }
+
+  &.rotate {
+    @extend .bgColorWhite;
+
+    &:hover {
+      @extend .bgColorBlack;
+      transform: scale(1.5) rotate(10deg);
+      box-shadow: 5px 5px 10px 0 $cGray;
+    }
+  }
+
+  &.bg-slide {
+    @extend .bgColorWhite;
+    z-index: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $cBlack;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $cWhite;
+
+      &::before {
+        content: '';
+        transform: none;
+      }
+    }
+  }
+
+  &.cubic-3d {
+    display: inline-block;
+    border: none;
+    padding: 0 0;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+
+    transform-style: preserve-3d;
+    perspective: 300px;
+
+    & span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid $cBlack;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      
+      // 親要素の中央に文字を配置したい場合は、line-height を 親要素の高さに設定する。
+      // なお高さには padding の値も含まれるので注意
+      line-height: 48px;
+      text-align: center;
+      transition: all 0.3s;
+
+      // 今回のアニメーションは、回転しつつ半分の高さだけ下方に移動するというものであるから、以下のような記述となる。
+      transform-origin: center center -25px;
+    }
+
+    & .hovering {
+      color: $cWhite;
+      background-color: $cBlack;
+      transform: rotateX(90deg);
+      opacity: 0;
+    }
+
+    & .default {
+      color: $cBlack;
+      background-color: $cWhite;
+      transform: rotateX(0);
+    }
+    
+    &:hover {
+      & .hovering {
+        transform: rotateX(0);
+        opacity: 1;
+      }
+
+      & .default {
+        transform: rotateX(-90deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,391 @@
+.mobile-menu-icon {
+  cursor: pointer;
+  outline: none !important;
+  background-color: transparent;
+  border: none;
+  -webkit-transition: -webkit-transform .7s;
+  transition: -webkit-transform .7s;
+  transition: transform .7s;
+  transition: transform .7s, -webkit-transform .7s;
+}
+
+.mobile-menu-icon > span {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 9px;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+}
+
+.mobile-menu-icon > span:last-child {
+  margin-bottom: 0px;
+}
+
+.menu-open {
+  background-color: black;
+}
+
+.menu-open .mobile-menu-icon > span {
+  background-color: white;
+}
+
+.menu-open .mobile-menu-icon > span:nth-child(1) {
+  -webkit-transform: translateY(11px) rotate(135deg);
+          transform: translateY(11px) rotate(135deg);
+}
+
+.menu-open .mobile-menu-icon > span:nth-child(2) {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.menu-open .mobile-menu-icon > span:nth-child(3) {
+  -webkit-transform: translateY(-11px) rotate(-135deg);
+          transform: translateY(-11px) rotate(-135deg);
+}
+
+.bgColorWhite, .btn.float, .btn.filled:hover, .btn.letter-spacing, .btn.shadow, .btn.solid, .btn.rotate, .btn.bg-slide {
+  background-color: white;
+  color: black;
+}
+
+.bgColorBlack, .btn.float:hover, .btn.filled, .btn.letter-spacing:hover, .btn.rotate:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn {
+  position: relative;
+  margin: 10px auto;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-weight: 600;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-decoration: none !important;
+  border: 1px solid black;
+}
+
+.btn.filled {
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn.filled:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn.letter-spacing:hover {
+  letter-spacing: 3px;
+}
+
+.btn.shadow:hover {
+  -webkit-transform: translate(-2.5px, -2.5px);
+          transform: translate(-2.5px, -2.5px);
+  -webkit-box-shadow: 5px 5px 0 0 black;
+          box-shadow: 5px 5px 0 0 black;
+}
+
+.btn.solid {
+  -webkit-box-shadow: 2px 2px 0 0 black;
+          box-shadow: 2px 2px 0 0 black;
+  border-radius: 7px;
+}
+
+.btn.solid:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+}
+
+.btn.rotate:hover {
+  -webkit-transform: scale(1.5) rotate(10deg);
+          transform: scale(1.5) rotate(10deg);
+  -webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn.bg-slide {
+  z-index: 0;
+}
+
+.btn.bg-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  z-index: -1;
+}
+
+.btn.bg-slide:hover {
+  color: white;
+}
+
+.btn.bg-slide:hover::before {
+  content: '';
+  -webkit-transform: none;
+          transform: none;
+}
+
+.btn.cubic-3d {
+  display: inline-block;
+  border: none;
+  padding: 0 0;
+  margin: 0 auto;
+  width: 150px;
+  height: 50px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 300px;
+          perspective: 300px;
+}
+
+.btn.cubic-3d span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 48px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform-origin: center center -25px;
+          transform-origin: center center -25px;
+}
+
+.btn.cubic-3d .hovering {
+  color: white;
+  background-color: black;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  opacity: 0;
+}
+
+.btn.cubic-3d .default {
+  color: black;
+  background-color: white;
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+}
+
+.btn.cubic-3d:hover .hovering {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  opacity: 1;
+}
+
+.btn.cubic-3d:hover .default {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loader .spinner {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: black;
+  -webkit-animation-name: spinner;
+          animation-name: spinner;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .double-spinner {
+  position: relative;
+  margin: 100px auto;
+}
+
+.loader .double-spinner > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  opacity: 0.5;
+  -webkit-animation-name: double-spinner;
+          animation-name: double-spinner;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .double-spinner > div:nth-child(1) {
+  -webkit-animation-delay: 1.0s;
+          animation-delay: 1.0s;
+}
+
+.loader .rect-spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+
+.loader .rect-spinner div {
+  display: inline-block;
+  width: 4px;
+  height: 100%;
+  background-color: black;
+  -webkit-animation-name: rect-spinner;
+          animation-name: rect-spinner;
+  -webkit-animation-duration: 2.4s;
+          animation-duration: 2.4s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .rect-spinner div:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.loader .rect-spinner div:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.loader .rect-spinner div:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.loader .rect-spinner div:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.loader .rect-spinner div:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+}
+
+@-webkit-keyframes double-spinner {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes double-spinner {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes rect-spinner {
+  0%, 40%, 60%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  50% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes rect-spinner {
+  0%, 40%, 60%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  50% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */
