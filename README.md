@@ -101,3 +101,47 @@
     align-items: flex-end;
 }
 ```
+
+# 注意点
+
+- アニメーションでいじっているプロパティを transition の制御対象にすると想定通りの挙動を見せない時がある。これを防ぐため、animation-fill-mode の値を none とする。
+
+```scss
+.img-zoom {
+    width: 100%;
+    height: 100%;
+    
+    .inview & {
+        transition: transform 0.3s ease;
+
+        @include animation(
+            $name: kf-img-show,
+            $duration: 1.6s,
+            $timing-function: ease-in-out,
+            
+            // 余計なことはしない
+            $fill-mode: none
+        );
+
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+}
+
+@keyframes kf-img-show {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    50.1% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+```
