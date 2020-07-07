@@ -145,3 +145,7 @@
     }
 }
 ```
+
+- inline 要素に transform プロパティは適用できない。特に span タグを使用する時には気をつける。
+  - https://7cc.hatenadiary.jp/entry/transformable-elements
+  - https://myscreate.com/pseudo-untransformable/

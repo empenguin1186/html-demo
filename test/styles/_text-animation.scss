@@ -1,0 +1,103 @@
+.animate {
+    
+    &__container {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        background-color: teal;
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: large;
+        font-weight: 600;
+        color: $cWhite;
+
+        & .char {
+            margin-left: 4px;
+        }
+
+        &.inview {
+            & .char {
+                
+                display: inline-block;
+
+                @include animation(
+                    $name: kf-text-animation,
+                    $duration: .3s,
+                    $timing-function: ease-in-out
+                );
+
+                @for $i from 1 through 9 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: .03s * $i;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes kf-text-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    
+    & span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        text-align: center;
+        line-height: 38px;
+        font-weight: 600;
+        transform-origin: center center -20px;
+        transition: transform 0.3s ease;
+        border: solid 1px $cBlack;
+    }
+
+    & .hover {
+        background-color: $cBlack;
+        color: $cWhite;
+        transform: rotateX(90deg);
+    }
+    
+    & .nothover {
+        background-color: $cWhite;
+        color: $cBlack;
+        transform: rotateX(0);
+    }
+    
+    &:hover {
+        & .hover {
+            transform: rotateX(0);
+        }
+        
+        & .nothover {
+            transform: rotateX(-90deg);
+        }
+    }
+}
