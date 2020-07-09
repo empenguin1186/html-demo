@@ -601,7 +601,7 @@ img {
   margin-left: 4px;
 }
 
-.animate__title.inview .char {
+.char-animation, .animate__title.inview .char, .scroll__element.inview .char {
   display: inline-block;
   -webkit-animation-name: kf-text-animation;
           animation-name: kf-text-animation;
@@ -619,49 +619,79 @@ img {
           animation-fill-mode: forwards;
 }
 
-.animate__title.inview .char:nth-child(1) {
+.char-animation:nth-child(1), .animate__title.inview .char:nth-child(1), .scroll__element.inview .char:nth-child(1) {
   -webkit-animation-delay: 0.03s;
           animation-delay: 0.03s;
 }
 
-.animate__title.inview .char:nth-child(2) {
+.char-animation:nth-child(2), .animate__title.inview .char:nth-child(2), .scroll__element.inview .char:nth-child(2) {
   -webkit-animation-delay: 0.06s;
           animation-delay: 0.06s;
 }
 
-.animate__title.inview .char:nth-child(3) {
+.char-animation:nth-child(3), .animate__title.inview .char:nth-child(3), .scroll__element.inview .char:nth-child(3) {
   -webkit-animation-delay: 0.09s;
           animation-delay: 0.09s;
 }
 
-.animate__title.inview .char:nth-child(4) {
+.char-animation:nth-child(4), .animate__title.inview .char:nth-child(4), .scroll__element.inview .char:nth-child(4) {
   -webkit-animation-delay: 0.12s;
           animation-delay: 0.12s;
 }
 
-.animate__title.inview .char:nth-child(5) {
+.char-animation:nth-child(5), .animate__title.inview .char:nth-child(5), .scroll__element.inview .char:nth-child(5) {
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
 }
 
-.animate__title.inview .char:nth-child(6) {
+.char-animation:nth-child(6), .animate__title.inview .char:nth-child(6), .scroll__element.inview .char:nth-child(6) {
   -webkit-animation-delay: 0.18s;
           animation-delay: 0.18s;
 }
 
-.animate__title.inview .char:nth-child(7) {
+.char-animation:nth-child(7), .animate__title.inview .char:nth-child(7), .scroll__element.inview .char:nth-child(7) {
   -webkit-animation-delay: 0.21s;
           animation-delay: 0.21s;
 }
 
-.animate__title.inview .char:nth-child(8) {
+.char-animation:nth-child(8), .animate__title.inview .char:nth-child(8), .scroll__element.inview .char:nth-child(8) {
   -webkit-animation-delay: 0.24s;
           animation-delay: 0.24s;
 }
 
-.animate__title.inview .char:nth-child(9) {
+.char-animation:nth-child(9), .animate__title.inview .char:nth-child(9), .scroll__element.inview .char:nth-child(9) {
   -webkit-animation-delay: 0.27s;
           animation-delay: 0.27s;
+}
+
+.char-animation:nth-child(10), .animate__title.inview .char:nth-child(10), .scroll__element.inview .char:nth-child(10) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.char-animation:nth-child(11), .animate__title.inview .char:nth-child(11), .scroll__element.inview .char:nth-child(11) {
+  -webkit-animation-delay: 0.33s;
+          animation-delay: 0.33s;
+}
+
+.char-animation:nth-child(12), .animate__title.inview .char:nth-child(12), .scroll__element.inview .char:nth-child(12) {
+  -webkit-animation-delay: 0.36s;
+          animation-delay: 0.36s;
+}
+
+.char-animation:nth-child(13), .animate__title.inview .char:nth-child(13), .scroll__element.inview .char:nth-child(13) {
+  -webkit-animation-delay: 0.39s;
+          animation-delay: 0.39s;
+}
+
+.char-animation:nth-child(14), .animate__title.inview .char:nth-child(14), .scroll__element.inview .char:nth-child(14) {
+  -webkit-animation-delay: 0.42s;
+          animation-delay: 0.42s;
+}
+
+.char-animation:nth-child(15), .animate__title.inview .char:nth-child(15), .scroll__element.inview .char:nth-child(15) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
 }
 
 @-webkit-keyframes kf-text-animation {
@@ -746,5 +776,35 @@ img {
 .btn-3d:hover .nothover {
   -webkit-transform: rotateX(-90deg);
           transform: rotateX(-90deg);
+}
+
+.scroll__element {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  color: white;
+  font-size: 2em;
+}
+
+.scroll__element:nth-child(1) {
+  background-color: teal;
+}
+
+.scroll__element:nth-child(2) {
+  background-color: orange;
+}
+
+.scroll__element:nth-child(3) {
+  background-color: magenta;
 }
 /*# sourceMappingURL=style.css.map */

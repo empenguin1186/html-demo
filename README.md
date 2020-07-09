@@ -149,3 +149,18 @@
 - inline 要素に transform プロパティは適用できない。特に span タグを使用する時には気をつける。
   - https://7cc.hatenadiary.jp/entry/transformable-elements
   - https://myscreate.com/pseudo-untransformable/
+
+# position が relative だけど文字を中央に配置したい場合
+
+```scss
+.text {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: whtie;
+}
+```

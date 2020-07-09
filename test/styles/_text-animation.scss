@@ -22,21 +22,24 @@
 
         &.inview {
             & .char {
-                
-                display: inline-block;
-
-                @include animation(
-                    $name: kf-text-animation,
-                    $duration: .3s,
-                    $timing-function: ease-in-out
-                );
-
-                @for $i from 1 through 9 {
-                    &:nth-child(#{$i}) {
-                        animation-delay: .03s * $i;
-                    }
-                }
+                @extend .char-animation;
             }
+        }
+    }
+}
+
+.char-animation {
+    display: inline-block;
+
+    @include animation(
+        $name: kf-text-animation,
+        $duration: .3s,
+        $timing-function: ease-in-out
+    );
+
+    @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+            animation-delay: .03s * $i;
         }
     }
 }

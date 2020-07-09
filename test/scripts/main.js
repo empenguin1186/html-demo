@@ -1,20 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const menuBtn = this.querySelector('.mobile-menu-icon');
-    const clickOrTap = window.ontouchstart ? 'touchstart' : 'click';
-    menuBtn.addEventListener(clickOrTap, function () {
-        document.querySelector('body').classList.toggle('menu-open');
-    })
 
-    const el = document.querySelector('.animate__title');
-    const str = el.innerHTML.trim().split("");
+    const menuBtn = new AnimationByBtnClick('.mobile-menu-icon');
+    menuBtn.addEvent('body', 'menu-open');
 
-    el.innerHTML = str.reduce((acc, curr) => {
-        curr = curr.replace(/\s+/, '&nbsp');
-        return `${acc}<span class="char">${curr}</span>`;
-    }, "");
+    const ta = new TextAnimation('.animate__title');
+    ta.animate();
 
-    const animateBtn = document.querySelector('.btn-3d');
-    animateBtn.addEventListener(clickOrTap, () => {
-        document.querySelector('.animate__title').classList.toggle('inview');
-    });
+    const animateBtn = new AnimationByBtnClick('.btn-3d');
+    animateBtn.addEventByCallBack('.animate__title', ta.animate.bind(ta));
+
+    const callback = function (el, isIntersecting) {
+        if (isIntersecting) {
+            const ta = new TextAnimation(el);
+            ta.animate();
+        }
+    }
+    const tso = new ScrollObserver('.scroll__element', callback);
+
+    const imageSlide = function (el, isIntersecting) {
+        if (isIntersecting) {
+            el.classList.toggle('inview');
+        }
+    }
+    const iso = new ScrollObserver('.cover-slide', imageSlide);
 });
