@@ -1,43 +1,85 @@
-.mobile-menu-icon {
+$cOpen: $cBlack;
+$cClose: $cBlack;
 
-    cursor: pointer;
-    outline: none !important;
-    background-color: transparent;
-    border: none;
-    transition: transform .7s;
+.mobile-menu {
 
-    & > span {
-        display: block;
-        top: 0;
-        left: 0;
-        width: 35px;
-        height: 2px;
-        background-color: $cBlack;
-        margin-bottom: 9px;
-        transition: all .7s;
+    position: fixed;
+    right: 0;
+    top: 60px;
 
-        &:last-child {
-            margin-bottom: 0px;
+    &__main {
+        list-style: none;
+        padding: 0;
+        perspective: 2000px;
+        transform-style: preserve-3d;
+    }
+
+    &__btn {
+        cursor: pointer;
+        outline: none !important;
+        background-color: transparent;
+        border: none;
+        transition: transform .7s;
+        margin: 5px;
+    
+        & > span {
+            display: block;
+            top: 0;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background-color: $cBlack;
+            margin-bottom: 9px;
+            transition: all .7s;
+    
+            &:last-child {
+                margin-bottom: 0px;
+            }
         }
     }
+
+    &__item {
+        transform: translate3d(0, 0, -1000px);
+        padding: 0 40px;
+        // opacity: 0;
+        transition: transform .3s, opacity .2s;
+    }
+
+    &__link {
+        display: block;
+        margin-top: 30px;
+        color: $cBlack;
+        text-decoration: none !important;
+    }
+
 }
 
 .menu-open {
-    background-color: $cBlack;
+    & #container {
+        transform: translate(-300px, 60px);
+        box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+    }
 
-    & .mobile-menu-icon {
-        & > span {
-            background-color: $cWhite;
+    & .mobile-menu {
+        &__btn {
+            & > span {
+                background-color: $cOpen;
+    
+                &:nth-child(1) {
+                    transform: translateY(11px) rotate(135deg);
+                }
+                &:nth-child(2) {
+                    transform: scaleX(0);
+                }
+                &:nth-child(3) {
+                    transform: translateY(-11px) rotate(-135deg);                
+                }
+            }
+        }
 
-            &:nth-child(1) {
-                transform: translateY(11px) rotate(135deg);
-            }
-            &:nth-child(2) {
-                transform: scaleX(0);
-            }
-            &:nth-child(3) {
-                transform: translateY(-11px) rotate(-135deg);                
-            }
+        &__item {
+            transform: none;
+            opacity: 1;
         }
     }
 }
