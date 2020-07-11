@@ -32,17 +32,17 @@
 
     &__footer {
         position: absolute;
-        bottom: 20px;
+        bottom: 0;
         left: 50%;
         z-index: 2;
         overflow: hidden;
         width: 30px;
-        height: 80px;
+        height: 100px;
     }
 
     &__scrolltext {
         position: absolute;
-        top: 15px;
+        top: 20px;
         left: -5px;
         font-size: 1.2em;
         color: rgba(255, 255, 255, 0.7);
@@ -50,7 +50,6 @@
     }
 
     &__downarrow {
-        height: 80px; // もっといい指定方法あるかも
         position: absolute;
         top: 0;
         left: 0;
