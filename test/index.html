@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -91,6 +92,33 @@
       <div class="cover-slide hover-darken">
         <img class="img-zoom" src="images/image-1.jpg">
       </div>
+
+      <h2>演習7</h2>
+      <p>swiper.js を使用してスライダーを実装しよう</p>
+      <div class="hero">
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="hero__title">Enjoy Rich</div>
+              <img class="swiper-img" src="images/image-1.jpg" alt="" srcset="">
+            </div>
+            <div class="swiper-slide">
+              <div class="hero__title">Fantastic</div>
+              <img class="swiper-img" src="images/image-2.jpg" alt="" srcset="">
+            </div>
+            <div class="swiper-slide">
+              <div class="hero__title">Experience</div>
+              <img class="swiper-img" src="images/image-3.jpg" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+        <div class="hero__footer">
+          <img src="images/arrow.svg" alt="" class="hero__downarrow">
+          <span class="hero__scrolltext">scroll</span>
+        </div>
+      </div>
     </div>
     <nav class="mobile-menu">
       <ul class="mobile-menu__main">
@@ -115,9 +143,11 @@
       </ul>
     </nav>
   </div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="scripts/libs/hero.js"></script>
   <script src="scripts/libs/animation.js"></script>
   <script src="scripts/libs/scroll.js"></script>
-  <script src="scripts/libs/buttonEvent.js"></script>
+  <script src="scripts/libs/button-event.js"></script>
   <script src="scripts/libs/mobile-menu.js"></script>
   <script src="scripts/main.js"></script>
 </body>
