@@ -24,4 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     const iso = new ScrollObserver('.cover-slide', imageSlide);
+
+    const hero = new HeroSlider('.swiper-container');
+    hero.start({ delay: 2000 });
+    setTimeout(() => {
+        hero.stop();
+    }, 5000);
 });
