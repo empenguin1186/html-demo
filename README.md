@@ -164,3 +164,40 @@
     color: whtie;
 }
 ```
+
+# height: auto; について
+- 要素の高さを子要素の高さの合計としたい時、height: auto; と設定する。
+
+# 要素の配置
+- position プロパティが absolute, fixed の要素に対して子要素を中央に配置したい場合、以下のように設定する。
+
+```scss
+.parent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+```
+
+# アスペクト比のキープ
+
+- img プロパティでアスペクト比を元の画像と同じようにキープしたいときは、以下を設定
+
+```scss
+img {
+  object-fit: cover;
+}
+```
+
+# 正しく z-index を設定したのに重なりが思った通りにいかない場合
+
+- z-index を設定して背面に配置したい要素が背面に配置されていない場合は、前面に配置したい要素と背面に配置したい要素が重なっているかどうかを確認する。
+- background-color プロパティのデフォルト値は transparent であるため、背面に隠したい要素がある場合は前面の要素に背景色を設定してあげる必要がある。
+https://www.w3schools.com/cssref/pr_background-color.asp
+
+# transform プロパティについて
+position を relative ではなく absolute にしないと transform プロパティが有効にならない場合が存在する。
