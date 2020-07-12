@@ -1,0 +1,22 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    border: 1px solid $cBlack;
+    font-weight: 600;
+    padding: 10px 40px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+
+    &.filled {
+        background-color: $cBlack;
+        color: $cWhite;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            color: $cBlack;
+            background-color: $cWhite;            
+        }
+    }
+}

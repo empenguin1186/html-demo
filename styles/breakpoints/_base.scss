@@ -7,6 +7,7 @@ Stylesheet: ベーススタイル
 
 body {
     font-family: 'Kameron', 'Noto Sans JP', sans-serif;
+    margin: 0;
 }
 
 img {
@@ -54,8 +55,12 @@ img {
 }
 
 #container {
-    position: relative;
+    position: absolute;
     z-index: 10;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    transition: all .3s;
 }
 
 .header {
@@ -107,6 +112,13 @@ img {
     }
 }
 
+#content {
+    position: relative;
+    margin-top: $navHeight;
+    width: 100%;
+    height: auto;
+}
+
 .logo {
     font-size: 42px;
     display: flex;
@@ -128,69 +140,4 @@ img {
 
 .sub-title {
     display: block;
-}
-
-
-// ============= _mobile-menu.scss ====================
-
-.mobile-menu {
-
-    position: fixed;
-    right: 0;
-    top: 60px;
-    width: 300px;
-    
-    &__btn {
-
-        background-color: transparent;
-        cursor: pointer;
-        border: none;
-        outline: none !important;
-
-        & > span {
-            background-color: $cBlack;
-            display: block;
-            width: 35px;
-            height: 2px;
-            margin-bottom: 9px;
-            
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    &__ul {
-        list-style: none;
-    }
-
-    &__link {
-        text-decoration: none !important;
-    }
-}
-
-
-// ============= _button.scss ====================
-
-.btn {
-    position: relative;
-    display: inline-block;
-    border: 1px solid $cBlack;
-    font-weight: 600;
-    padding: 10px 40px;
-    margin: 10px auto;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none !important;
-
-    &.filled {
-        background-color: $cBlack;
-        color: $cWhite;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
-        &:hover {
-            color: $cBlack;
-            background-color: $cWhite;            
-        }
-    }
 }

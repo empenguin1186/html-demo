@@ -1,0 +1,66 @@
+
+.hero {
+    position: relative;
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 35px; // TODO
+        font-weight: 600;
+    }
+
+    &__footer {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        z-index: 10;
+        width: 50px;
+        height: 100px;
+        overflow: hidden;
+    }
+
+    &__downarrow {
+        position: absolute;
+
+        @include animation(
+            $name: kf-downarrow,
+            $duration: 2.0s,
+            $timing-function: linear,
+            $iteration-count: infinite
+        );
+    }
+
+    &__scrolltext {
+        position: absolute;
+        top: 20px;
+        left: -5px;
+        transform: rotate(90deg);
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+}
+
+@keyframes kf-downarrow {
+    0%,
+    100% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: none
+    }
+}
+
+.swiper {
+    
+    &-img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+}
