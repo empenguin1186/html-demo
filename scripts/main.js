@@ -14,6 +14,14 @@ window.addEventListener('DOMContentLoaded', function () {
         document.querySelector('#global-container').classList.toggle('menu-open');
     });
 
+    // カバースライドアニメーションの設定
+    const imageSlide = function (el, isIntersecting) {
+        if (isIntersecting) {
+            el.classList.toggle('inview');
+        }
+    }
+    const iso = new ScrollObserver('.cover-slide', imageSlide);
+
     // ヒーロースライダーの設定
     const hero = new HeroSlider('.swiper-container');
     hero.start({ delay: 2000 });

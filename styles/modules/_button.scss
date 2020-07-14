@@ -9,14 +9,31 @@
     transition: all 0.3s ease;
     text-decoration: none !important;
 
-    &.filled {
-        background-color: $cBlack;
-        color: $cWhite;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
+    &.float {
+        @extend .fgBlackbgWhite;
+        
         &:hover {
-            color: $cBlack;
-            background-color: $cWhite;            
+            @extend .fgWhitebgBlack;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
         }
     }
+
+    &.filled {
+        @extend .fgWhitebgBlack;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        
+        &:hover {
+            @extend .fgBlackbgWhite;
+        }
+    }
+}
+
+.fgWhitebgBlack {
+    background-color: $cBlack;
+    color: $cWhite;
+}
+
+.fgBlackbgWhite {
+    background-color: $cWhite;
+    color: $cBlack;
 }

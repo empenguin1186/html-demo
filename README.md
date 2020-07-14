@@ -180,7 +180,6 @@
   bottom: 0;
   margin: auto;
 }
-
 ```
 
 # アスペクト比のキープ
@@ -201,3 +200,5 @@ https://www.w3schools.com/cssref/pr_background-color.asp
 
 # transform プロパティについて
 position を relative ではなく absolute にしないと transform プロパティが有効にならない場合が存在する。
+
+
